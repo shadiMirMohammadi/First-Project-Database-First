@@ -1,0 +1,158 @@
+﻿@model WebApplication.Models.T_Products
+
+@{
+    Layout = null;
+    string name = Model.ModelName;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حذف @name </title>
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="rtl">
+    <div class="dashboard">
+        @Html.Partial("_PDashboardRight")
+        @Html.Partial("_PDashboardTop")
+        <div class="details">
+            @using (Html.BeginForm("Delete", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div>
+                    <img src="~/Image/Product/ProductProfile/@Model.ImageName" />
+                </div>
+                <div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.CategoryName)
+                            </div>
+                            <div class="form-control">
+                                @Html.DisplayFor(model => model.CategoryName)
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.BrandName)
+                            </div>
+                            <div class="form-control">
+                                @Html.DisplayFor(model => model.BrandName)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.ModelName)
+                            </div>
+                            <div class="form-control">
+                                @Html.DisplayFor(model => model.ModelName)
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.Price)
+                            </div>
+                            <div class="form-control">
+                                @Html.DisplayFor(model => model.Price)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.Inventory)
+                            </div>
+                            <div class="form-control">
+                                @Html.DisplayFor(model => model.Inventory)
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.SalesNumber)
+                            </div>
+                            <div class="form-control">
+                                @Html.DisplayFor(model => model.SalesNumber)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.IsActive)
+                            </div>
+                            <div class="form-control">
+                                @if (Model.IsActive == true)
+                                {
+                                    <span style="color:green;">فعال</span>
+                                }
+                                else
+                                {
+                                    <span style="color:red;">غیر فعال</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.InventoryStatus)
+                            </div>
+                            <div class="form-control">
+                                @if (Model.InventoryStatus == true)
+                                {
+                                    <span style="color:green;">موجود</span>
+                                }
+                                else
+                                {
+                                    <span style="color:red;">ناموجود</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.Description)
+                            </div>
+                            <div class="form-control">
+                                @Html.DisplayFor(model => model.Description)
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-label">
+                                @Html.DisplayNameFor(model => model.RegisterDate)
+                            </div>
+                            <div class="form-control">
+                                @Html.DisplayFor(model => model.RegisterDate)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col" style=" margin-top: 25px;">
+                        <input type="submit" value="حذف @name" class="btn btn-danger" />
+                        @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn btn-info" })
+                    </div>
+                </div>
+            }
+        </div>
+
+
+    </div>
+</body>
+</html>

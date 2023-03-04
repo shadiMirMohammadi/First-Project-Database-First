@@ -1,0 +1,72 @@
+﻿@model WebApplication.Models.T_Roles
+
+@{
+    Layout = null;
+    string name = Model.RoleTitle;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ویرایش @name </title>
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="rtl">
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <div class="dashboard">
+        @Html.Partial("_PDashboardRight")
+        @Html.Partial("_PDashboardTop")
+
+        <div class="details " style="width: 300px; margin: 20px 667px 10px 0px !important; ">
+
+            <div>
+               <h4 style="border-radius:10px;">ویرایش @name</h4>
+            </div>
+
+            @using (Html.BeginForm("Edit", "Roles", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.RoleId)
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.RoleName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.RoleName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>    
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.RoleTitle, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.RoleTitle, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.RoleTitle, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row ">
+                    <div class="col" style=" margin: 16px 39px 0px 0px;">
+                        <input type="submit" value="ذخیره" class="btn btn-success" />
+                        @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn btn-info" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

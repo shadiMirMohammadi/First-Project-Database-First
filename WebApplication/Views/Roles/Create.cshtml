@@ -1,0 +1,77 @@
+﻿@model WebApplication.Models.T_Roles
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نقش کاربری جدید</title>
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="rtl">
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+    <div class="dashboard">
+        @Html.Partial("_PDashboardRight")
+
+        @Html.Partial("_PDashboardTop")
+
+        <div class="create-roles " style=" width: 300px !important; margin: 20px 667px 10px 0px !important; ">
+            @using (Html.BeginForm("Create", "Roles", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <h4 style="border-radius:10px;"> ثبت نقش کاربری جدید</h4>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label" })
+                                <div class="col-md-9">
+                                    @Html.EditorFor(model => model.RoleName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.RoleName, "", new { @class = "text-danger" })
+                                </div>
+
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.LabelFor(model => model.RoleTitle, htmlAttributes: new { @class = "control-label" })
+                                <div class="col-md-9">
+                                    @Html.EditorFor(model => model.RoleTitle, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.RoleTitle, "", new { @class = "text-danger" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="col-md-offset-2" style="margin:0px 70px">
+                                    <input type="submit" value="ثبت" class="btn btn-success" />
+                                    @Html.ActionLink("بازگشت به لیست ", "Index", null, new { @class = "btn btn-warning" })
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,526 @@
+﻿
+@font-face {
+    font-family: 'vazir';
+    src: url('../font/vazir-medium-fd.eot') format('embedded-opentype');
+    src: url('../font/vazir-medium-fd.ttf') format('truetype');
+    src: url('../font/vazir-medium-fd.woff2') format('woff2');
+    src: url('../font/vazir-medium-fd.woff') format('woff');
+}
+
+* {
+    font-family: vazir;
+}
+
+
+
+
+/*نوبار*/
+nav {
+    background-color: #EF9F9F;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: auto;
+}
+
+    nav ul {
+        padding: 0px;
+        padding-top: 15px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+
+body nav ul li {
+    list-style: none;
+    margin: auto 10px;
+}
+
+    body nav ul li div i {
+        padding: 5px;
+    }
+
+    body nav ul li:first-child {
+        display: flex;
+        margin: auto 20px auto 100px;
+    }
+
+    body nav ul li img {
+        width: 40px;
+    }
+
+    body nav ul li:first-child img {
+        width: 70px;
+    }
+
+    body nav ul li h2 {
+        margin: 25px 20px 0px 0px;
+        font-family: 'cursive';
+    }
+
+    body nav ul li:nth-child(7) {
+        margin: auto 127px auto 20px !important;
+    }
+
+    body nav ul li:nth-child(6) {
+        margin: auto 80px auto 0;
+    }
+
+    body nav ul li:nth-child(8) {
+        margin: auto 40px auto 20px !important;
+    }
+
+    body nav ul li:last-child i,
+    body nav ul li:nth-child(7) i {
+        font-size: 30px
+    }
+
+    body nav ul li:nth-child(6) i {
+        padding: 5px;
+        font-size: 20px;
+    }
+
+body nav input {
+    background-color: #EF9F9F;
+    width: 190px;
+    height: 40px;
+    padding-left: 60px;
+    border: 0 solid #eae2d1;
+}
+
+    body nav input:focus {
+        outline: none;
+    }
+
+body nav a,
+body footer div ul li a {
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+body nav input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 14px;
+    color: #222222;
+}
+
+body nav ul li:nth-child(6) > div {
+    display: flex;
+    border-bottom: 1px solid black !important;
+}
+
+body nav ul li a:hover {
+    text-shadow: 0px 1px black;
+    color: #96afe5;
+    text-decoration: none;
+}
+/*نوبار*/
+
+
+/*main صفحه اصلی*/
+
+body main > div:first-child {
+    width: 1300px;
+    height: auto;
+    background-color: #F47C7C;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 100px;
+}
+
+    body main > div:first-child div h2:first-child img {
+        width: 50px;
+    }
+
+    body main > div:first-child div h2:last-child img {
+        width: 30px;
+    }
+
+
+body main div:first-child ul,
+main div:nth-child(2) ul,
+main div:nth-child(3) ul:first-child,
+main div:nth-child(3) ul:last-child {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+    body main div:first-child ul img {
+        width: 200px;
+        margin: 20px;
+        border-radius: 8px;
+    }
+
+body main > div:first-child div {
+    display: flex;
+    justify-content: space-between;
+}
+
+    body main > div:first-child div h2 {
+        margin: 20px 30px;
+        font-size: 21px;
+    }
+
+body main div:first-child ul li h3 {
+    text-align: center;
+    font-size: 16px;
+}
+
+body main div:first-child ul li h5 {
+    text-decoration: line-through;
+    margin: 10px 20px;
+}
+
+body main div:first-child ul li div {
+    display: flex;
+}
+
+    body main div:first-child ul li div img {
+        width: 50px;
+        margin: 0px 0px 10px 40px;
+    }
+
+body main div:first-child ul li h4 {
+    margin: 10px 20px;
+    font-size: 20px;
+}
+
+main div:nth-child(2) {
+    width: 1300px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: #ef9f9f69;
+    display: flex;
+    justify-content: space-between;
+}
+
+    main div:nth-child(2) ul li {
+        background-color: #d29d9d;
+        width: 125px;
+        border-radius: 40px;
+        height: auto;
+        list-style: none;
+        margin: 20px 24px;
+    }
+
+    main div:nth-child(2) ul {
+        justify-content: space-around;
+    }
+
+        main div:nth-child(2) ul li img {
+            width: 60px;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        main div:nth-child(2) ul li h3 {
+            text-align: center;
+            margin: 10px 0px 20px 0px;
+            font-size: 17px;
+        }
+
+main > div:nth-child(3) {
+    width: 1300px;
+    height: auto;
+    border-radius: 2px;
+    background-color: #d38888fd;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+main div:nth-child(3) ul li img {
+    width: 200px;
+    margin: 20px 0px;
+    border-radius: 8px;
+}
+
+main div:nth-child(3) ul li h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+main div:nth-child(3) ul li div {
+    display: flex;
+}
+
+    main div:nth-child(3) ul li div h4 {
+        margin: 10px 40px;
+        font-size: 20px;
+    }
+
+    main div:nth-child(3) ul li div img {
+        width: 50px;
+        margin: 0px 0px 10px 40px;
+    }
+
+main div:nth-child(3) hr {
+    color: #000000;
+    margin: 0px 20px;
+}
+
+
+/*main صفحه اصلی*/
+
+
+/* footer */
+
+body footer div {
+    background-color: #bc7070;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    body footer div ul li {
+        list-style: none;
+    }
+
+        body footer div ul li h5 {
+            font-size: 20px;
+            margin: 20px 0px;
+        }
+
+        body footer div ul li a {
+            font-size: 16px;
+        }
+
+    body footer div ul:last-child div {
+        display: block;
+    }
+
+        body footer div ul:last-child div img {
+            height: 100px;
+            border-radius: 3px;
+            margin: 10px 0px 20px 10px;
+        }
+
+    body footer div ul li i {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+/* footer */
+
+.dashboard {
+    margin-top: -16px;
+}
+    /*ایجاد */
+    .dashboard .create-roles {
+        width: 430px;
+        height: auto;
+        margin: 30px 600px !important;
+/*
+        width: 300px;
+        margin: 20px 667px 10px 0px !important;*/
+    }
+
+    .dashboard .create {
+        width: 765px;
+        height: auto;
+        margin: 30px 430px !important
+    }
+
+        .dashboard .create tr:last-child td:last-child div {
+            margin: 0px 20px;
+        }
+
+
+    /*ایجاد */
+    /*داشبورد ادمین*/
+    .dashboard > div:first-child img {
+        width: 100px;
+        border-radius: 50px;
+        margin: 30px 66px 3px 66px;
+        border: 3px solid black;
+    }
+
+    .dashboard > div:first-child {
+        background-color: #ffa8a8;
+        position: fixed;
+        right: 0px;
+    }
+
+        .dashboard > div:first-child table {
+            margin: 15px 60px;
+        }
+
+            .dashboard > div:first-child table td {
+                margin: 10px 0px;
+                background: rgb(247,113,113);
+                background: linear-gradient(218deg, rgba(247,113,113,1) 0%, rgba(255,60,60,1) 100%);
+            }
+
+                .dashboard > div:first-child table td:hover {
+                    background: rgb(247,113,113);
+                    background: linear-gradient(218deg, rgba(247,113,113,1) 0%, rgba(167,40,40,1) 100%);
+                    color: wheat;
+                }
+
+    .dashboard .dashboard-top {
+        margin: 0px 240px 0px 10px;
+    }
+
+        .dashboard .dashboard-top div:first-child {
+            background-color: #ff6f6f;
+        }
+
+            .dashboard .dashboard-top div:first-child ul {
+                display: flex;
+                justify-content: space-between;
+            }
+
+                .dashboard .dashboard-top div:first-child ul li {
+                    list-style: none;
+                    color: white;
+                    margin: 15px;
+                }
+
+                    .dashboard .dashboard-top div:first-child ul li span {
+                        margin-left: 10px;
+                    }
+
+        .dashboard .dashboard-top div:last-child {
+            background-color: #ffd8d8;
+        }
+
+            .dashboard .dashboard-top div:last-child li {
+                margin: 10px 5px;
+                color: white;
+            }
+
+
+                .dashboard .dashboard-top div:last-child li:first-child {
+                    background-color: #bc1212;
+                }
+
+                    .dashboard .dashboard-top div:last-child li:first-child:hover {
+                        background-color: #7b1c1c;
+                    }
+
+                .dashboard .dashboard-top div:last-child li:nth-child(2) {
+                    background-color: #f84949;
+                }
+
+                    .dashboard .dashboard-top div:last-child li:nth-child(2):hover {
+                        background-color: #ac2e2e;
+                    }
+
+                .dashboard .dashboard-top div:last-child li:nth-child(3) {
+                    background-color: #dd6670;
+                }
+
+                    .dashboard .dashboard-top div:last-child li:nth-child(3):hover {
+                        background-color: #964249;
+                    }
+
+                .dashboard .dashboard-top div:last-child li:nth-child(4) {
+                    background-color: #ff4d73;
+                }
+
+                    .dashboard .dashboard-top div:last-child li:nth-child(4):hover {
+                        background-color: #b93450;
+                    }
+
+.btn-color {
+    color: white;
+   
+}
+
+    .btn-color:hover {
+        color: #ffd8d8;
+        text-decoration: none
+    }
+
+.dashboard .dashboard-top div:first-child, .dashboard .dashboard-top div:last-child /* .dashboard div:last-child */ {
+    width: 1100px;
+    margin: 16px;
+    border-radius: 10px;
+}
+
+.dashboard > div:nth-child(3) {
+    background-color: #fde6e6;
+    margin: 33px 260px 0px 20px;
+}
+
+    .dashboard > div:nth-child(3) h4 {
+        color: black;
+        padding: 30px;
+        text-align: center;
+        background-color: salmon;
+    }
+
+    .dashboard > div:nth-child(3) table {
+        margin: -16px;
+    }
+
+        .dashboard > div:nth-child(3) table, .dashboard > div:nth-child(3) table th, .dashboard > div:nth-child(3) table td {
+            border: 2px solid #aea4a4;
+            margin: 0px;
+        }
+
+
+.dashboard-right td {
+    color: white;
+}
+
+
+.dashboard-right hr {
+    background-color: #000000;
+    block-size: 2px;
+    margin: 15px 15px;
+}
+/*داشبورد ادمین*/
+
+/*لیست دسته بندی ها*/
+.new-category {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+}
+
+    .new-category span {
+        border: none;
+    }
+/*لیست دسته بندی ها*/
+
+
+
+/*جزئیات*/
+.dashboard .details {
+    padding: 20px;
+    width: 800px;
+    margin: 33px 425px 0px 20px !important;
+    border-radius: 10px;
+}
+
+    .dashboard .details img {
+        width: 110px;
+        height: 110px;
+        border-radius: 57px;
+        display: block;
+        margin: auto;
+        margin-bottom: 15px;
+        border: 3px solid;
+    }
+
+    .dashboard .details > div > div {
+        margin: 20px;
+    }
+
+        .dashboard .details > div > div:last-child > div:last-child {
+            margin: 25px 0px 0px 0px;
+        }
+
+.dashboard .details__role {
+    width: 300px !important;
+    margin: 33px 525px 0px 20px !important;
+}
+
+    /*جزئیات*/

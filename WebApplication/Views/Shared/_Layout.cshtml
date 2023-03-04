@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="rtl">
+
+    <nav>
+        <ul>
+            <li>
+                <img src="~/image/Navbar/make-up.png" />
+            </li>
+            <li>
+                <div> <a href="#">صفحه اصلی</a></div>
+            </li>
+
+            <li><a href="#">فروشگاه</a></li>
+
+            <li><a href="#">تماس با ما</a></li>
+            <li><a href="#">درباره با ما</a></li>
+
+            <li>
+                <div>
+                    <input type="text" placeholder="جستجو" />
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+            </li>
+            <li><img src="~/image/Navbar/shopping-cart.png" alt=""></li>
+            <li>
+                @*@Html.ActionLink("ورود", "Dashboard","Admins")*@
+                <a href="/Admins/Dashboard">
+                    <img src="~/image/Navbar/user.png" alt="">
+                </a>
+
+            </li>
+
+
+
+        </ul>
+    </nav>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <footer>
+        <div>
+            <ul>
+                <li>
+                    <h5>خدمات </h5>
+                </li>
+                <li><a href="#">مشاوره خرید</a></li>
+                <li><a href="#">انتقادات و پیشنهادات </a></li>
+                <li><a href="#">پرسش های متداول</a></li>
+
+            </ul>
+            <ul>
+                <li>
+                    <h5>تماس با ما</h5>
+                </li>
+                <li>
+                    <i class="glyphicon glyphicon-earphone"></i>
+                    <a href="tel:09918915659">09918915659 </a>
+                </li>
+                <li>
+                    <i class="glyphicon glyphicon-envelope"></i>
+                    <a href="mailto:info@onlineShop.com">info@onlineShop.com</a>
+                </li>
+                <li>
+                    <i class="glyphicon glyphicon-home"></i>
+
+                    <a href="#">کد پستی : 127433023</a>
+                </li>
+                <li>
+                    <i class="glyphicon glyphicon-road"></i>
+                    <a href="#">تهران، خیابان ملاصدرا، خیابان گلدشت، کوچه گلدشت یکم، پلاک 14</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div>
+                        <h5>نماد ها</h5>
+                        <img src="~/image/Footer/inmad.png" height="185" />
+                        <img src="~/image/Footer/zarin-palpng.parspng.com_.png" height="185" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

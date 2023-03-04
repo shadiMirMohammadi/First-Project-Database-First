@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eae4a308f2814cfd97d06552d23e247b" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_WebModel.T_Users" Width="1.5" PointX="9.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebModel.T_Admins" Width="1.5" PointX="4.875" PointY="0.5" />
+        <EntityTypeShape EntityType="DB_WebModel.T_Categories" Width="1.5" PointX="0.75" PointY="4.5" />
+        <EntityTypeShape EntityType="DB_WebModel.T_Products" Width="1.5" PointX="7.5" PointY="5.625" />
+        <EntityTypeShape EntityType="DB_WebModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="4.625" />
+        <EntityTypeShape EntityType="DB_WebModel.T_Roles" Width="1.5" PointX="7.25" PointY="0.5" />
+        <AssociationConnector Association="DB_WebModel.FK_T_Admins_T_Roles" />
+        <AssociationConnector Association="DB_WebModel.FK_T_Categories_T_Admins" />
+        <AssociationConnector Association="DB_WebModel.FK_T_Products_T_Admins" ManuallyRouted="true" >
+          <ConnectorPoint PointX="6.375" PointY="4.3994271846612287" />
+          <ConnectorPoint PointX="6.75" PointY="4.7744271846612287" />
+          <ConnectorPoint PointX="8.2788762641334053" PointY="4.7744271846612287" />
+          <ConnectorPoint PointX="8.2788762641334053" PointY="5.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="DB_WebModel.FK_T_Products_T_Categories" />
+        <AssociationConnector Association="DB_WebModel.FK_T_Users_T_Roles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
