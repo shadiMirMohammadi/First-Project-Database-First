@@ -32,17 +32,17 @@
                     <i class="glyphicon glyphicon-search"></i>
                 </div>
             </li>
-            <li><img src="~/image/Navbar/shopping-cart.png" alt=""></li>
             <li>
-                @*@Html.ActionLink("ورود", "Dashboard","Admins")*@
-                <a href="/Admins/Dashboard">
-                    <img src="~/image/Navbar/user.png" alt="">
-                </a>
-
+                <div>
+                    <img src="~/image/Navbar/shopping-cart.png" alt="">
+                </div>
             </li>
-
-
-
+            <li>
+                <div>
+                    <img src="~/image/Navbar/user.png" alt="">
+                    @Html.ActionLink("ورود | ثبت نام", "Dashboard", "Admins")
+                </div>
+            </li>
         </ul>
     </nav>
 

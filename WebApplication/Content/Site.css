@@ -36,10 +36,18 @@ body nav ul li {
     list-style: none;
     margin: auto 10px;
 }
-
-    body nav ul li div i {
-        padding: 5px;
+    body nav ul li:last-child div {
+        background-color: #f9eded;
+        padding: 8px;
+        border-radius: 6px;
     }
+        body nav ul li:last-child div:hover {
+            box-shadow: 0px 0px 6px #ffd8d8;
+        }
+
+        body nav ul li div i {
+            padding: 5px;
+        }
 
     body nav ul li:first-child {
         display: flex;
@@ -47,11 +55,11 @@ body nav ul li {
     }
 
     body nav ul li img {
-        width: 40px;
+        width: 20px;
     }
 
     body nav ul li:first-child img {
-        width: 70px;
+        width: 40px;
     }
 
     body nav ul li h2 {
@@ -112,8 +120,8 @@ body nav ul li:nth-child(6) > div {
 }
 
 body nav ul li a:hover {
-    text-shadow: 0px 1px black;
-    color: #96afe5;
+    text-shadow: 0px 0px 1px black;
+    color: #222222;
     text-decoration: none;
 }
 /*نوبار*/
@@ -127,7 +135,7 @@ body main > div:first-child {
     background-color: #F47C7C;
     margin: 0 auto;
     border-radius: 5px;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
     body main > div:first-child div h2:first-child img {
@@ -146,13 +154,35 @@ main div:nth-child(3) ul:last-child {
     display: flex;
     list-style: none;
     justify-content: space-between;
+    margin-left: 15px;
 }
-
-    body main div:first-child ul img {
-        width: 200px;
-        margin: 20px;
+    main div:nth-child(3) ul:first-child li, main div:nth-child(3) ul:last-child li {
+        background-color: #FFD7D7;
         border-radius: 8px;
+        margin: 10px auto;
     }
+        main div:nth-child(3) ul:first-child li:hover, main div:nth-child(3) ul:last-child li:hover {
+            box-shadow: 0px 0px 12px #6e2929;
+        }
+
+
+
+    body main div:first-child ul li {
+        background-color: #FFBDBD;
+        border-radius: 8px;
+        margin-bottom: 9px;
+    }
+        body main div:first-child ul li:hover{
+            box-shadow:0px 0px 13px #b62e2e ;
+        }
+
+
+
+        body main div:first-child ul img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 8px;
+        }
 
 body main > div:first-child div {
     display: flex;
@@ -206,10 +236,13 @@ main div:nth-child(2) {
         list-style: none;
         margin: 20px 24px;
     }
+        main div:nth-child(2) ul li:hover{
+            box-shadow:0px 0px 8px #621717;
+        }
 
-    main div:nth-child(2) ul {
-        justify-content: space-around;
-    }
+        main div:nth-child(2) ul {
+            justify-content: space-around;
+        }
 
         main div:nth-child(2) ul li img {
             width: 60px;
@@ -235,8 +268,10 @@ main > div:nth-child(3) {
 
 main div:nth-child(3) ul li img {
     width: 200px;
-    margin: 20px 0px;
     border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+    margin-top:15px;
 }
 
 main div:nth-child(3) ul li h3 {
@@ -260,8 +295,9 @@ main div:nth-child(3) ul li div {
     }
 
 main div:nth-child(3) hr {
-    color: #000000;
-    margin: 0px 20px;
+    background-color: #000000;
+    block-size: 2px;
+    margin: 15px 44px 15px 38px;
 }
 
 
@@ -466,16 +502,24 @@ body footer div {
         }
 
 
-.dashboard-right td {
-    color: white;
+.dashboard-right ul li {
+    background: linear-gradient(310deg, rgba(235,13,13,1) 0%, rgba(255,130,130,1) 100%);
+    margin: 20px 13px;
+    padding: 5px;
+    list-style: none;
+    border-radius: 5px;
 }
+    .dashboard-right ul li:hover {
+        box-shadow: 0px 0px 6px white;
+        background: rgb(255,130,130);
+        background: linear-gradient(310deg, rgba(255,130,130,1) 0%, rgba(235,13,13,1) 100%);
+    }
 
-
-.dashboard-right hr {
-    background-color: #000000;
-    block-size: 2px;
-    margin: 15px 15px;
-}
+    .dashboard-right hr {
+        background-color: #000000;
+        block-size: 2px;
+        margin: 15px 15px;
+    }
 /*داشبورد ادمین*/
 
 /*لیست دسته بندی ها*/

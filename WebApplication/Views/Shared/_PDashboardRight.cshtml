@@ -1,56 +1,37 @@
 ﻿<div class="dashboard-right">
     <div><img src="~/Image/icon.png" /></div>
     <hr />
-    <table>
-
-
-
-        <tr>
-            <td class="btn">
-                @Html.ActionLink("داشبورد", "Dashboard", "Admins",null,  new { @class = "btn-color" })
-            </td>
-        </tr>
-
-        <tr>
-            <td class="btn">
+    <div>
+        <ul>
+            <li>
+                @Html.ActionLink("داشبورد", "Dashboard", "Admins", null, new { @class = "btn-color" })
+            </li>
+            <li>
                 @Html.ActionLink("دسته بندی ها", "Index", "Categories", null, new { @class = "btn-color" })
-            </td>
-        </tr>
-
-
-        <tr>
-            <td class="btn">
+            </li>
+            <li>
                 @Html.ActionLink("محصولات", "Index", "Products", null, new { @class = "btn-color" })
-            </td>
-        </tr>
-
-
-
-        <tr>
-            <td class="btn">
+            </li>
+            <li>
                 @Html.ActionLink("مدیران", "Index", "Admins", null, new { @class = "btn-color" })
-            </td>
-        </tr>
-
-
-
-        <tr>
-            <td class="btn">
+            </li>
+            <li>
                 @Html.ActionLink("کاربران", "Index", "Users", null, new { @class = "btn-color" })
-            </td>
-        </tr>
-
-        <tr>
-            <td class="btn">
+            </li>
+            <li>
                 @Html.ActionLink("نقش های کاربری", "Index", "Roles", null, new { @class = "btn-color" })
-            </td>
-        </tr>
-
-
-
-        <tr><td class="btn">موجودی کالا</td></tr>
-
-        <tr><td class="btn">تنظیمات</td></tr>
-        <tr><td class="btn">خروج</td></tr>
-    </table>
+            </li>
+            <li>
+                <a href="#" class="btn-color">
+                    موجودی کالا
+                </a>
+            </li>
+            <li>
+                <a href="#" class="btn-color">تنظیمات</a>
+            </li>
+            <li>
+                <a href="#" class="btn-color">خروج</a>
+            </li>
+        </ul>
+    </div>
 </div>
