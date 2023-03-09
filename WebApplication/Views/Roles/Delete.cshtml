@@ -22,23 +22,20 @@
     <div class="dashboard">
         @Html.Partial("_PDashboardRight")
         @Html.Partial("_PDashboardTop")
-        <div class="details " style="width: 300px; margin: 20px 667px 10px 0px !important; ">
+        <div class="delete-role">
             <div>
-                <h4 style="border-radius:10px;">حذف @name</h4>
+                <h4>حذف @name</h4>
             </div>
-
-
             @using (Html.BeginForm("Delete", "Roles", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
-
                 <div class="form-row">
                     <div class="col">
                         <div class="form-label">
                             @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label" })
                         </div>
                         <div>
-                            @Html.EditorFor(model => model.RoleName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.RoleName, new { htmlAttributes = new { @class = "form-control disable-input" } })
                             @Html.ValidationMessageFor(model => model.RoleName, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -49,21 +46,18 @@
                             @Html.LabelFor(model => model.RoleTitle, htmlAttributes: new { @class = "control-label" })
                         </div>
                         <div>
-                            @Html.EditorFor(model => model.RoleTitle, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.RoleTitle, new { htmlAttributes = new { @class = "form-control disable-input" } })
                             @Html.ValidationMessageFor(model => model.RoleTitle, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
-
                 <div class="form-row">
-                    <div class="col" style=" margin: 16px 44px 0px 0px;">
-                        <input type="submit" value="حذف" class="btn btn-danger" />
+                    <div class="col">
                         @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn btn-info" })
+                        <input type="submit" value="حذف" class="btn btn-danger"  />             
                     </div>
                 </div>
-
             }
-
         </div>
     </div>
 </body>

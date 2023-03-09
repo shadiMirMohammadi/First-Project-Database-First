@@ -26,43 +26,255 @@
 
         @Html.Partial("_PDashboardTop")
 
-        <div>
+        <div class="index index__rol-cat">
             <div>
-                <table class="table">
-                    <tr>
-                        <th>ردیف</th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.RoleName)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.RoleTitle)
-                        </th>
-                        <th class="new-category" style="border:none;">
-                            <span>عملیات</span>
-                            <span class="btn btn-success">@Html.ActionLink("ثبت نقش کاربری جدید", "Create", null, new { @class = "btn-color" })</span>
-                        </th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@count</td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.RoleName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.RoleTitle)
-                            </td>
-                            <td>
-                                @Html.ActionLink("ویرایش", "Edit", new { id = item.RoleId }, new { @class = "btn btn-danger" }) |
-                                @Html.ActionLink("حذف", "Delete", new { id = item.RoleId }, new { @class = "btn btn-warning" })
-                            </td>
-                        </tr>
-                        count++;
-                    }
-                </table>
+                <h1>لیست نقش های کاربری </h1>
+                <div>
+                    @Html.ActionLink("ثبت نقش کاربری جدید", "Create", null, new { @class = "btn-color btn btn-success" })
+                </div>
             </div>
+            <div class="margin-r-20">
+                <div class="table-col">
+                    ردیف
+                </div>
+                <div class="table-col__div-long">
+                    @Html.DisplayNameFor(model => model.RoleName)
+                </div>
+                <div class="table-col__div-long">
+                    @Html.DisplayNameFor(model => model.RoleTitle)
+                </div>
+                <div class="table-col__div-last">
+                    عملیات
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="table-row margin-r-20">
+                    <div class="table-col">
+                        @count
+                    </div>
+                    <div class="table-col__div-long">
+                        @Html.DisplayFor(modelItem => item.RoleName)
+                    </div>
+                    <div class="table-col__div-long">
+                        @Html.DisplayFor(modelItem => item.RoleTitle)
+                    </div>
+                    <div class="table-col__div-last">
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.RoleId }, new { @class = "btn btn-danger" }) |
+                        @Html.ActionLink("حذف", "Delete", new { id = item.RoleId }, new { @class = "btn btn-warning" })
+                    </div>
+                </div>
+                count++;
+            }
         </div>
+
+
+
+
+
+
+
+
+
+        @*<div class="details">
+            <div class="index-role">
+                <div class="col">
+                    <div class="form-label">
+                        ردیف
+                    </div>
+                    <div class="form-label">
+                        @Html.DisplayNameFor(model => model.RoleName)
+                    </div>
+                    <div class="form-label">
+                        @Html.DisplayNameFor(model => model.RoleTitle)
+                    </div>
+                    <div class="form-label">
+                        <span>عملیات</span>
+                    </div>
+                    <div>
+                        @Html.ActionLink("ثبت نقش کاربری جدید", "Create", null, new { @class = "btn btn-success btn-color " })
+                    </div>
+                </div>
+                <hr />
+                @foreach (var item in Model)
+                {
+                    <div class="for-flex-item">
+                        <div class="col-2">
+                            @count
+                        </div>
+                        <div class="col-lg-2">
+                            @Html.DisplayFor(modelItem => item.RoleName, null, new { @class = "text-right" })
+                        </div>
+                        <div class="col-2">
+                            @Html.DisplayFor(modelItem => item.RoleTitle, null, new { @class = "text-right" })
+                        </div>
+                        <div class="col">
+                            @Html.ActionLink("ویرایش", "Edit", new { id = item.RoleId }, new { @class = "btn btn-danger" }) |
+                            @Html.ActionLink("حذف", "Delete", new { id = item.RoleId }, new { @class = "btn btn-warning" })
+                        </div>
+                    </div>
+                    <hr />
+                    count++;
+                }
+            </div>
+        </div>*@
+
+
+
+        @*<div class="  table-bordered index-role ">
+            <div class="">
+                <div class="form-label flx-label ">
+                    <div>
+                        <label>ردیف</label>
+                    </div>
+                    <div>
+                        <label> @Html.DisplayNameFor(model => model.RoleName)</label>
+
+                    </div>
+                    <div>
+                        <label> @Html.DisplayNameFor(model => model.RoleTitle)</label>
+
+
+                    </div>
+                    <div>
+                        <div>
+
+                            <div></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                @foreach (var item in Model)
+                {
+                    <div class="div-model">
+                        <div>
+                            <h6 class="text-right">  @count</h6>
+
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                            <h6>
+                                @Html.DisplayFor(modelItem => item.RoleTitle, null, new { @class = "text-right" })
+                            </h6>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    count++;
+                }
+            </div>
+
+        </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--<div class="form-row index-role ">
+    <div class="col">
+        <div class="form-label">
+            <div>ردیف</div>
+            <div>@Html.DisplayNameFor(model => model.RoleName)</div>
+            <div> @Html.DisplayNameFor(model => model.RoleTitle)</div>
+            <div>عملیات</div>
+        </div>
+
+
+
+
+
+
+        <div>
+            @foreach (var item in Model)
+            {
+                <div>
+                    @count
+                    @Html.DisplayFor(modelItem => item.RoleName)
+                    @Html.DisplayFor(modelItem => item.RoleTitle)
+                    @Html.ActionLink("ویرایش", "Edit", new { id = item.RoleId }, new { @class = "btn btn-danger" }) |
+                    @Html.ActionLink("حذف", "Delete", new { id = item.RoleId }, new { @class = "btn btn-warning" })
+                </div>
+
+                count++;
+                <br />
+            }
+        </div>
+    </div>-->
+        @*<table class="table">
+            <tr>
+                <th>ردیف</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoleName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoleTitle)
+                </th>
+                <th class="new-category" style="border:none;">
+                    <span>عملیات</span>
+                    <span class="btn btn-success">@Html.ActionLink("ثبت نقش کاربری جدید", "Create", null, new { @class = "btn-color" })</span>
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@count</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoleName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoleTitle)
+                    </td>
+                    <td>
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.RoleId }, new { @class = "btn btn-danger" }) |
+                        @Html.ActionLink("حذف", "Delete", new { id = item.RoleId }, new { @class = "btn btn-warning" })
+                    </td>
+                </tr>
+                count++;
+            }
+        </table>*@
+        <!--</div>-->
     </div>
+
 </body>
 </html>

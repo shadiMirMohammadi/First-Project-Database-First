@@ -25,13 +25,10 @@
     <div class="dashboard">
         @Html.Partial("_PDashboardRight")
         @Html.Partial("_PDashboardTop")
-
-        <div class="details " style="width: 300px; margin: 20px 667px 10px 0px !important; ">
-
+        <div class="edit-role">
             <div>
-               <h4 style="border-radius:10px;">ویرایش @name</h4>
+                <h4>ویرایش @name</h4>
             </div>
-
             @using (Html.BeginForm("Edit", "Roles", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
@@ -46,7 +43,7 @@
                             @Html.EditorFor(model => model.RoleName, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.RoleName, "", new { @class = "text-danger" })
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="col">
@@ -60,9 +57,9 @@
                     </div>
                 </div>
                 <div class="form-row ">
-                    <div class="col" style=" margin: 16px 39px 0px 0px;">
-                        <input type="submit" value="ذخیره" class="btn btn-success" />
+                    <div class="col">
                         @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn btn-info" })
+                        <input type="submit" value="ذخیره" class="btn btn-success" />
                     </div>
                 </div>
             }
