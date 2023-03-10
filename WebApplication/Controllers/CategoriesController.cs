@@ -12,12 +12,15 @@ namespace WebApplication.Controllers
     public class CategoriesController : Controller
     {
         DB_WebEntities dbCategories = new DB_WebEntities();
+
+        #region Index
         public ActionResult Index()
         {
             return View(dbCategories.T_Categories);
         }
+        #endregion
 
-
+        #region Create
         [HttpGet]
         public ActionResult Create()
         {
@@ -36,7 +39,9 @@ namespace WebApplication.Controllers
             }
             return View();
         }
+        #endregion
 
+        #region Edit
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -62,5 +67,45 @@ namespace WebApplication.Controllers
             }
             return View();
         }
+        #endregion
+
+        #region Delete
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (dbCategories.T_Categories.Find(id) == null)
+            {
+                return HttpNotFound();
+            }
+            return View(dbCategories.T_Categories.Find(id));
+        }
+
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeletePost(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (dbCategories.T_Categories.Find(id) == null)
+            {
+                return HttpNotFound();
+            }
+            var category = dbCategories.T_Categories.Find(id);
+            if (category != null)
+            {
+                dbCategories.T_Categories.Remove(category);
+                dbCategories.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(category);
+        }
+        #endregion
+
     }
 }
