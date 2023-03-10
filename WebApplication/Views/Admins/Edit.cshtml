@@ -1,0 +1,152 @@
+﻿@model WebApplication.Models.T_Admins
+
+@{
+    Layout = null;
+    string name = Model.Name + " " + Model.Family;
+    string adminImage = "user.jpg";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ویرایش @name </title>
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="rtl">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <div class="dashboard">
+        @Html.Partial("_PDashboardRight")
+        @Html.Partial("_PDashboardTop")
+        <div class="edit-admins">
+            @using (Html.BeginForm("Edit", "Admins", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.RoleId)
+                @Html.HiddenFor(model => model.RegisterDate)
+                @Html.HiddenFor(model => model.ImageName)
+                <div>
+                    @if (Model.ImageName != adminImage)
+                    {
+                        adminImage = Model.ImageName;
+                        <img src="~/Image/Profile/ProfileAdmin/@adminImage" />
+                    }
+                    else
+                    {
+                        <img src="~/Image/Profile/ProfileAdmin/@adminImage" />
+                    }
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.Family, htmlAttributes: new { @class = "control-label " })
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.Family, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Family, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label " })
+
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <select id="IsActive" name="IsActive" class="form-control">
+                            @if (Model.IsActive == true)
+                            {
+                                <option value="true" selected>فعال</option>
+                                <option value="false">غیر فعال</option>
+                            }
+                            else
+                            {
+                                <option value="true">فعال</option>
+                                <option value="false" selected>غیر فعال</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-label">
+                            @Html.LabelFor(model => model.NationalCode, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div>
+                            @Html.EditorFor(model => model.NationalCode, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NationalCode, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-label">
+                            <label class="control-label"> ویرایش تصویر</label>
+                        </div>
+                        <div>
+                            <input type="file" id="newImageProfile" name="newImageProfile" class="form-control" />
+                            @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-row ">
+                            <div class="col col-pro__input">
+                                @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn btn-info" })
+                                <input type="submit" value="ذخیره تغییرات" class="btn btn-success margin-r-5" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

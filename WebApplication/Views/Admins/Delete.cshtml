@@ -3,7 +3,7 @@
 @{
     Layout = null;
     string name = Model.Name + " " + Model.Family;
-    string adminImage = "user.jpg";
+    string adminImageName = "user.jpg";
 }
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جزئیات @name </title>
+    <title>حذف @name </title>
     <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
@@ -23,17 +23,19 @@
     <div class="dashboard">
         @Html.Partial("_PDashboardRight")
         @Html.Partial("_PDashboardTop")
-        <div class="details-admins">
-            <div>
+        <div class="delete-admins">
+            @using (Html.BeginForm("Delete", "Admins", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
                 <div>
-                    @if (Model.ImageName != adminImage)
+                    @if (Model.ImageName != adminImageName)
                     {
-                        adminImage = Model.ImageName;
-                        <img src="~/Image/Profile/ProfileAdmin/@adminImage" />
+                        adminImageName = Model.ImageName;
+                        <img src="~/Image/Profile/ProfileAdmin/@adminImageName" />
                     }
                     else
                     {
-                        <img src="~/Image/Profile/ProfileAdmin/@adminImage" />
+                        <img src="~/Image/Profile/ProfileAdmin/@adminImageName" />
                     }
                 </div>
                 <div>
@@ -55,8 +57,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
                     <div class="form-row">
                         <div class="col">
                             <div class="form-label">
@@ -75,8 +75,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
                     <div class="form-row">
                         <div class="col">
                             <div class="form-label">
@@ -95,8 +93,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
                     <div class="form-row">
                         <div class="col">
                             <div class="form-label">
@@ -114,12 +110,12 @@
                             </div>
                         </div>
                         <div class="col col-pro__input">
-                            @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn btn-info" })
-                            @Html.ActionLink("ویرایش", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning  margin-r-5" })
+                            @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn btn-info " })
+                            <input type="submit" value="حذف @name" class="btn btn-danger margin-r-5" />
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
 </body>

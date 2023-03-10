@@ -19,77 +19,44 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="rtl">
-
     <div class="dashboard">
-
         @Html.Partial("_PDashboardRight")
-
         @Html.Partial("_PDashboardTop")
-
-        <div>
+        <div class="index index__rol-cat">
             <div>
-                <table class="table">
-                    <tr>
-                        <th>ردیف</th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.CategoryName)
-                        </th>
-                        <th class="new-category" style="border:none;">
-                            <span>عملیات</span>
-                            <span class="btn btn-success">@Html.ActionLink("ثبت دسته بندی جدید", "Create", null, new { @class = "btn-color" })</span>
-                        </th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@count</td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CategoryName)
-                            </td>
-                            <td>
-                                @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }, new { @class = "btn btn-danger" }) |
-                                @Html.ActionLink("حذف", "Delete", new { id = item.Id }, new { @class = "btn btn-warning" })
-                            </td>
-                        </tr>
-                        count++;
-                    }
-
-                </table>
-
+                <h1>لیست دسته بندی ها </h1>
+                <div>
+                    @Html.ActionLink("ثبت دسته بندی جدید", "Create", null, new { @class = "btn-color btn btn-success" })
+                </div>
             </div>
-
+            <div class="margin-r-20">
+                <div class="table-col__div-last">
+                    ردیف
+                </div>
+                <div class="table-col__div-last">
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </div>
+                <div class="table-col__div-last">
+                    عملیات
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="table-row margin-r-20">
+                    <div class="table-col__div-last">
+                        @count
+                    </div>
+                    <div class="table-col__div-last">
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </div>
+                    <div class="table-col__div-last">
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }, new { @class = "btn btn-danger" }) |
+                        @Html.ActionLink("حذف", "Delete", new { id = item.Id }, new { @class = "btn btn-warning" })
+                    </div>
+                </div>
+                count++;
+            }
         </div>
-
     </div>
-    <p>
-
-    </p>
 </body>
 </html>
-@*<table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("جزئیات", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("حذف", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-        }
-
-    </table>
-    <p>
-        @Html.ActionLink("ثبت دسته بندی جدید", "Create")
-    </p>*@
